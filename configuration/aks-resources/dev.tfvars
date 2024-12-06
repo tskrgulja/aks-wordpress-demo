@@ -1,3 +1,4 @@
+subscription_id    = "bfa5fa76-965d-497d-a2c3-300cd6dfb70b"
 project_name       = "tstask"
 environment        = "dev"
 wordpress_hostname = "wb.ops-bewerbung-3.pg.senecops.com"
