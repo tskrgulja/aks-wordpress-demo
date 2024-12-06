@@ -1,6 +1,7 @@
 module "infrastructure" {
   source = "../../modules/infrastructure"
 
+  subscription_id    = var.subscription_id
   project_name       = var.project_name
   environment        = var.environment
   db_username        = var.db_username
