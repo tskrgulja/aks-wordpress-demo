@@ -1,0 +1,27 @@
+podSecurityContext:
+  runAsNonRoot: false
+  fsGroup: 65534
+  seccompProfile:
+    type: RuntimeDefault
+securityContext:
+  privileged: false
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  runAsNonRoot: false
+  runAsUser: 65532
+  runAsGroup: 65532
+  capabilities:
+    drop: ["ALL"]
+containerSecurityContext:
+  enabled: true
+  seLinuxOptions: {}
+  runAsUser: 0
+  runAsGroup: 1001
+  runAsNonRoot: false
+  privileged: true
+  allowPrivilegeEscalation: true
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop: ["ALL"]
+  seccompProfile:
+    type: "RuntimeDefault"

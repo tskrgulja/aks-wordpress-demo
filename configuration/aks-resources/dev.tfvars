@@ -1,0 +1,6 @@
+project_name       = "tstask"
+environment        = "dev"
+wordpress_hostname = "wb.ops-bewerbung-3.pg.senecops.com"
+dns_zone_domain    = "ops-bewerbung-3.pg.senecops.com"
+db_password        = "H@Sh1CoR3!"
+db_username        = "psqladmin"
