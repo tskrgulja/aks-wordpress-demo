@@ -3,10 +3,10 @@
 ## Description
 Repository contains Terraform configuation for Wordpress deployment to Azure Kubernetes Service (AKS).
 The setup uses:
- - Application Gateway as an ingress
- - external-dns for automatic updates to DNS zone
- - cert-manager for automated TLS certificate configuration (Let's Encrypt)
- - Azure Database for MySql for storing Wordpress instance data
+ - **Application Gateway** as an ingress
+ - **external-dns** for automatic updates to DNS zone
+ - **cert-manager** for automated TLS certificate configuration (**Let's Encrypt**)
+ - **Azure Database for MySql** for storing Wordpress instance data (**Azure Database for MariaDB** is getting retired and can no longer be created)
 
  ## Deployment
  The Terraform code is separated into two layers:
@@ -41,6 +41,7 @@ As this is only a simple demo deployment it is not following all of the best pra
    - no firewalls or web application firewalls are used.
    - Let's Encrypt free TLS certificate is used
    - no pod-level security
+   - Wordpress uses DB administrator account
  - **Reliability** - Reliability could be improved. Currently there are some weak points, such as: 
    - AKS uses only one node pool
    - no database backup is configured
