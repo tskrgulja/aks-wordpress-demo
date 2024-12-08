@@ -51,7 +51,7 @@ resource "kubernetes_ingress_v1" "wordpress" {
 
   spec {
     rule {
-      host = var.wordpress_hostname
+      host = var.wordpress_domain_name
       http {
         path {
           path      = "/"
@@ -71,7 +71,7 @@ resource "kubernetes_ingress_v1" "wordpress" {
     }
 
     tls {
-      hosts       = [var.wordpress_hostname]
+      hosts       = [var.wordpress_domain_name]
       secret_name = local.tls_secret_name
     }
   }
@@ -194,7 +194,7 @@ resource "kubernetes_service_v1" "wordpress" {
   metadata {
     name = local.wordpress_service_name
     annotations = {
-      "external-dns.alpha.kubernetes.io/hostname" = var.wordpress_hostname
+      "external-dns.alpha.kubernetes.io/hostname" = var.wordpress_domain_name
     }
   }
 
