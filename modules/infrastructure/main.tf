@@ -292,6 +292,6 @@ resource "azurerm_role_assignment" "identity_appgw_network_contributor_ra" {
 
 # Public DNZ zone used to resolve application's hostname
 resource "azurerm_dns_zone" "this" {
-  name                = var.dns_zone_domain
+  name                = var.dns_zone_domain_name
   resource_group_name = azurerm_resource_group.common.name
 }

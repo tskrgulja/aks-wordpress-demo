@@ -19,10 +19,10 @@ variable "db_password" {
   sensitive = true
 }
 
-variable "wordpress_hostname" {
+variable "wordpress_domain_name" {
   type = string
 }
 
-variable "dns_zone_domain" {
+variable "dns_zone_domain_name" {
   type = string
 }
