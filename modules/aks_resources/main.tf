@@ -229,7 +229,7 @@ resource "helm_release" "cert_manager" {
     name  = "installCRDs"
     value = "true"
   }
-} 
+}
 
 # ClusterIssuer is CRD which is installed with cert-manager
 # if we try to deploy instance of ClusterIssuer using kubernetes_manifest
@@ -237,24 +237,24 @@ resource "helm_release" "cert_manager" {
 # and there is no CRD present yet
 # workaround we have here is using Helm with our custom chart which encapsulates the manifest
 # because Terraform does not validate helm_release in the same way during plan time 
-resource "helm_release" "cert_manager_clusterissuer"{
-  name = "cert-manager-clusterissuer"
+resource "helm_release" "cert_manager_clusterissuer" {
+  name  = "cert-manager-clusterissuer"
   chart = "${path.module}/charts/cert-manager-clusterissuer"
 
-  set{
-    name = "ingress_class_name"
+  set {
+    name  = "ingress_class_name"
     value = "azure-application-gateway"
   }
-  set{
-    name = "tls_secret_name"
+  set {
+    name  = "tls_secret_name"
     value = local.tls_secret_name
   }
-  set{
-    name = "cluster_issuer_name"
+  set {
+    name  = "cluster_issuer_name"
     value = local.cluster_issuer_name
   }
 
-  depends_on = [ helm_release.cert_manager ]
+  depends_on = [helm_release.cert_manager]
 }
 
 # this secret is used by the external-dns (for authentication to Azure)
